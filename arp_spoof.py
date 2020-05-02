@@ -1,13 +1,17 @@
 import scapy.all as scapy
-from optparse import OptionParser
+import subprocess
+import argparse
 import sys
 import time
 
 def get_arguments():
-    parser = OptionParser()
-    parser.add_option('-t' , '--target' , dest='target' , help='Specify target ip address')
-    (options , args) = parser.parse_args()
-    return options
+    parser = argparse.ArgumentParser(description='ARP SPOOF')
+    parser.add_argument('-t' , '--target' , dest='target', nargs='?' , help='Specify target ip addres
+s' , required=True)
+    args = parser.parse_args()
+    return args
+
+
 
 
 def get_mac(ip):
