@@ -6,12 +6,9 @@ import time
 
 def get_arguments():
     parser = argparse.ArgumentParser(description='ARP SPOOF')
-    parser.add_argument('-t' , '--target' , dest='target', nargs='?' , help='Specify target ip addres
-s' , required=True)
+    parser.add_argument('-t' , '--target' , dest='target', nargs='?' , help='Specify target ip address' , required=True)
     args = parser.parse_args()
     return args
-
-
 
 
 def get_mac(ip):
